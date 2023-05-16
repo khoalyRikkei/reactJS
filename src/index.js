@@ -1,13 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import reportWebVitals from "./reportWebVitals";
+import Bai_2 from "./components/Bai_2";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <fieldset className="container">
+      <legend>Bài 1</legend>
+      <h1 className="title-upper">Tung đồng xu</h1>
+      <App />
+    </fieldset>
+    <fieldset className="container">
+      <legend>Bài 2</legend>
+      <h1 className="title-upper">Tung xúc xắc</h1>
+      <Bai_2 />
+    </fieldset>
   </React.StrictMode>
 );
 
