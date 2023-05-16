@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from "react";
+import Radius from "./components/Radius";
+import InputElement from "./components/InputComponent";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = { radius: 0 };
+  }
+  handleOnChange = (value) => {
+    console.log(1111111111, value);
+    this.setState({ radius: Number(value) });
+  };
+  handleClick = (status) => {
+    if (status) {
+      this.setState({ radius: this.state.radius + 1 });
+    } else {
+      this.setState({ radius: this.state.radius - 1 });
+    }
+  };
+  render() {
+    return (
+      <div className="App">
+        <InputElement onChangeInput={this.handleOnChange} />
+        <button onClick={() => this.handleClick(true)}>+</button>
+        <button onClick={() => this.handleClick(false)}>-</button>
+        <Radius radius={this.state.radius} />
+
+        {this.state.radius}
+      </div>
+    );
+  }
 }
 
 export default App;
