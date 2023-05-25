@@ -1,38 +1,63 @@
-.App {
+.table-game {
+  width: 600px;
+  margin: 100px auto;
+  border: 5px solid grey;
+  border-radius: 8px;
+}
+
+.container-item {
+  width: 100%;
+  background-color: rgb(17, 166, 230);
+  position: relative;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-weight: 600;
   color: white;
+  padding: 20px;
+}
+.table-point {
+  text-align: left;
+  position: absolute;
+  left: 20px;
+  top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+#add-user input {
+  width: 70%;
+  border: none;
+  background-color: rgba(185, 224, 241, 0.757);
+  padding: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#add-user {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+table td:nth-child(2) {
+  width: 70%;
+}
+
+table button {
+  width: 35px;
+  border: none;
+  padding: 10px;
+  background-color: rgb(212, 210, 210) !important;
+  color: rgb(62, 60, 60) !important;
+}
+span {
+  width: 35px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+
+.table > :not(caption) > * > * {
+  padding: 0 !important;
+}
+
+td {
+  vertical-align: middle;
+  padding: 5px;
 }
