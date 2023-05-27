@@ -10,45 +10,6 @@ function App() {
   // const player = { id: 1, name: "Phúc", point: 0 }
   const [listPlayer, setListPlayer] = useState([]);
 
-  // xử lý add
-  const handleAdd = (value) => {
-    // tạo người chơi
-
-    // Tìm index của phần tử cuối trong listUser
-
-    const indexLast = listPlayer.length - 1;
-    // Player cuối cùng
-
-    const playerLastest = listPlayer[indexLast];
-
-    const player = {
-      id: listPlayer.length ? playerLastest.id + 1 : 1,
-      name: value,
-      point: 0,
-    };
-
-    if (listPlayer.length) {
-      setListPlayer([...listPlayer, player]);
-    } else {
-      setListPlayer([player]);
-    }
-  };
-
-  //
-  const handleDelete = (id) => {
-    const newData = listPlayer.filter((player) => {
-      if (player.id !== id) {
-        return true;
-      }
-    });
-    setListPlayer(newData);
-  };
-
-  /**
-   *
-   * @param {} action
-   * @param {*} id
-   */
   const handleEdit = (action, id) => {
     let max = 1;
 
@@ -83,12 +44,8 @@ function App() {
       <Container>
         <div className="table-game">
           <PointGames listPlayer={listPlayer} />
-          <ListUser
-            listPlayer={listPlayer}
-            onDelete={handleDelete}
-            onEdit={handleEdit}
-          />
-          <AddUser onAdd={handleAdd} />
+          <ListUser listPlayer={listPlayer} onEdit={handleEdit} />
+          <AddUser />
         </div>
       </Container>
     </>

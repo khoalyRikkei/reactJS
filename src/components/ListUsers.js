@@ -1,16 +1,25 @@
 import Table from "react-bootstrap/Table";
 import { TiDelete } from "react-icons/ti";
 import { FaCrown } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { _DELETE, _DOWN, _UP } from "../constant/common";
+import listPlayer from "../Redux/Reducer";
 
-function ListUser(props) {
+function ListUser() {
+  const dispatch = useDispatch();
+  const list = useSelector((a) => a);
+  console.log(222, list);
+
   return (
     <Table striped bordered hover>
       <tbody>
-        {props.listPlayer.length ? (
-          props.listPlayer.map((player, index) => (
+        {list?.length ? (
+          list.map((player, index) => (
             <tr key={index}>
               <td>
-                <span onClick={() => props.onDelete(player.id)}>
+                <span
+                  onClick={() => dispatch({ type: _DELETE, id: player.id })}
+                >
                   <TiDelete />
                 </span>
                 {player.isTop && (
@@ -21,11 +30,15 @@ function ListUser(props) {
               </td>
               <td>{player.name}</td>
               <td>
-                <button onClick={() => props.onEdit("down", player.id)}>
+                <button
+                  onClick={() => dispatch({ type: _DOWN, id: player.id })}
+                >
                   -
                 </button>
                 <span>{player.point}</span>
-                <button onClick={() => props.onEdit("up", player.id)}>+</button>
+                <button onClick={() => dispatch({ type: _UP, id: player.id })}>
+                  +
+                </button>
               </td>
             </tr>
           ))

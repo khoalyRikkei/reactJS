@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Button } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { _ADD } from "../constant/common";
 
-function AddUser(props) {
+function AddUser() {
+  const dispatch = useDispatch();
   const [valueInput, setValueInput] = useState("");
   const handleAdd = () => {
-    // Truyền dữ liệu cho App
-    props.onAdd(valueInput);
+    dispatch({ type: _ADD, payload: valueInput });
     setValueInput("");
   };
   return (
