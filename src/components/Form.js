@@ -38,7 +38,6 @@ function Form(props) {
                   type="text"
                   className="form-control"
                   name="idStudent"
-                  value={dataForm?.idStudent}
                   disable
                 />
               </div>
@@ -46,36 +45,19 @@ function Form(props) {
             <div className="form-group row">
               <label className="col-sm-3 col-form-label">Tên sinh viên</label>
               <div className="col-sm-9">
-                <input
-                  type="text"
-                  className="form-control"
-                  name="name"
-                  value={dataForm?.name}
-                  onChange={handleOnChange}
-                />
+                <input type="text" className="form-control" name="name" />
               </div>
             </div>
             <div className="form-group row">
               <label className="col-sm-3 col-form-label">Tuổi</label>
               <div className="col-sm-9">
-                <input
-                  type="text"
-                  className="form-control"
-                  name="age"
-                  value={dataForm?.age}
-                  onChange={handleOnChange}
-                />
+                <input type="text" className="form-control" name="age" />
               </div>
             </div>
             <div className="form-group row">
               <label className="col-sm-3 col-form-label">Giới tính</label>
               <div className="col-sm-9">
-                <select
-                  name="gender"
-                  className="form-control"
-                  defaultValue={dataForm?.gender ? dataForm.gender : " male"}
-                  ref={gender}
-                >
+                <select name="gender" className="form-control">
                   <option value="male">Nam</option>
                   <option value="female">Nữ</option>
                 </select>
@@ -84,24 +66,13 @@ function Form(props) {
             <div className="form-group row">
               <label className="col-sm-3 col-form-label">Ngày sinh</label>
               <div className="col-sm-9">
-                <input
-                  className="form-control"
-                  placeholder="dd/mm/yyyy"
-                  value={dataForm?.doB}
-                  onChange={handleOnChange}
-                />
+                <input className="form-control" placeholder="dd/mm/yyyy" />
               </div>
             </div>
             <div className="form-group row">
               <label className="col-sm-3 col-form-label">Nơi sinh</label>
               <div className="col-sm-9">
-                <select
-                  className="form-control"
-                  value={dataForm?.poB}
-                  ref={poB}
-                  name="poB"
-                  onChange={handleOnChange}
-                >
+                <select className="form-control" name="poB">
                   <option value="29">Hà Nội</option>
                   <option value="59">TP. Hồ Chí Minh</option>
                   <option value="43">Đà Nẵng</option>
@@ -111,23 +82,13 @@ function Form(props) {
             <div className="form-group row">
               <label className="col-sm-3 col-form-label">Địa chỉ</label>
               <div className="col-sm-9">
-                <textarea
-                  className="form-control"
-                  defaultValue={dataForm?.address}
-                  onChange={handleOnChange}
-                />
+                <textarea className="form-control" />
               </div>
             </div>
 
-            {props.action !== "view" && (
-              <button
-                type="submit"
-                className="btn btn-primary me-2"
-                onClick={(e) => handleSubmit(e)}
-              >
-                {props.action === "add" ? "Add new student" : "Update student"}
-              </button>
-            )}
+            <button type="submit" className="btn btn-primary me-2">
+              Add new student
+            </button>
           </form>
         </div>
       </div>

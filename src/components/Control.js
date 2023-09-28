@@ -3,24 +3,7 @@ function Control(props) {
     <div className="card-header">
       <div className="row">
         <div className="col-3">
-          <button
-            type="button"
-            className="btn btn-primary btn-icon-text"
-            onClick={() =>
-              props.onToggle(
-                {
-                  idStudent: "",
-                  name: "",
-                  age: "",
-                  gender: "",
-                  doB: "",
-                  poB: "",
-                  address: "",
-                },
-                "add"
-              )
-            }
-          >
+          <button type="button" className="btn btn-primary btn-icon-text">
             Thêm mới sinh viên
           </button>
         </div>
